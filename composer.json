@@ -1,0 +1,25 @@
+{
+    "name": "elokaily/auth",
+    "description": "Custom Auth",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Elokaily\\Auth\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Eloakily",
+            "email" : "mahmoudelokaily3@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Elokaily\\Auth\\Providers\\AuthProvider"
+            ]
+        }
+    }
+}
+
