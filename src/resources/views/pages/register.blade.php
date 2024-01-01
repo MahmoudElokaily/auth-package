@@ -3,7 +3,7 @@
     <div class="container">
         <div class="form-container" id="signup-form">
             <h1>Sign Up</h1>
-            <form action="{{route('auth.store')}}" method="post">
+            <form action="{{route('store')}}" method="post">
                 @csrf
                 <label for="new-name">Name</label>
                 <input type="text" id="new-name" name="name" required>
@@ -19,7 +19,7 @@
                 <input type="password" id="confirm-password" name="password_confirmation" required>
                 <button type="submit">Sign Up</button>
             </form>
-            <p>Already have an account? <a href="{{route('auth.login')}}" id="login-link">Login</a></p>
+            <p>Already have an account? <a href="{{route('login')}}" id="login-link">Login</a></p>
         </div>
     </div>
 @endsection
