@@ -43,7 +43,7 @@ class AuthController extends Controller
             "name"           => "required|string|max:255",
             "username"       => "required|string|max:255|unique:users|regex:/^\w*$/",
             "email"          => "required|email|max:255|unique:users",
-            "phone_number"   => 'required|string|between:11,13',
+            "phone_number"   => 'required|string|between:11,13|unique:users',
             "password"       => 'required|min:6|confirmed'
         ]);
         $user = User::create($data);
@@ -70,8 +70,9 @@ class AuthController extends Controller
     }
 
     public function resetPassword($token) {
-        $data["title"] = __("Reset Password");
-        return view("auth::pages.reset-password" , compact('token'));
+        $data["title"] = __("Change Password");
+        $data['token'] = $token;
+        return view("auth::pages.reset-password" , $data);
     }
 
     public function updatePassword(Request $request) {
